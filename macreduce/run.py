@@ -49,10 +49,10 @@ if VCAP_CONFIG:
     REDIS_INSTANCE.flushdb()
 
 else:
-    print 'We are not running in Bluemix! Dev Mode Enabled'
+    print('We are not running in Bluemix! Dev Mode Enabled')
     app = Eve(static_folder=static_folder,
               redis=REDIS_INSTANCE)
-    print '  Enabling Debug ...'
+    print('  Enabling Debug ...')
     app.debug = True
 
 # Setup some default home page path rules for JSON and HTML

@@ -18,6 +18,7 @@ from eve_docs import eve_docs
 from routes import home
 from gevent import wsgi, monkey, socket
 import os
+from platform import python_version
 
 __author__ = "Sanjay Joshi"
 __copyright__ = "IBM Copyright 2015"
@@ -40,8 +41,8 @@ static_folder = os.path.join(PWD, "macreduce/static")
 
 # Detect if we are deployed within Bluemix or not and configure accordingly
 if VCAP_CONFIG:
-    print 'Welcome to Bluemix'
-    print 'Running on Python Version: 2.7.9'
+    print('Welcome to Bluemix')
+    print('Running on Python Version: ' + python_version())
 
     app = Eve(static_folder=static_folder,
               redis=REDIS_INSTANCE)
